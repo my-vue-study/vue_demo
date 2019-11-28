@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <!-- 顶部 Header 区域 -->
     <mt-header fixed title="vue.demo"></mt-header>
     <!-- 中间的 路由 router-view 区域 -->
@@ -33,4 +33,8 @@
 
 
 <style lang="scss" scoped>
+.app-container {
+  padding-top: 40px;
+  overflow-x: hidden;
+}
 </style>
