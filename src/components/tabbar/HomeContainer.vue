@@ -1,13 +1,10 @@
 <template>
   <div>
     <mt-swipe :auto="4000">
-      <mt-swipe-item>1</mt-swipe-item>
-      <mt-swipe-item>2</mt-swipe-item>
-      <mt-swipe-item>3</mt-swipe-item>
       <!-- 在组件中，使用v-for循环的话，一定要使用 key -->
-      <!-- <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
-        <img :src="item.img" alt />
-      </mt-swipe-item>-->
+      <mt-swipe-item v-for="item in lunbotuList" :key="item">
+        <img :src="item" alt />
+      </mt-swipe-item>
     </mt-swipe>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -54,7 +51,13 @@
 export default {
   data() {
     return {
-      lunbotuList: [] // 保存轮播图的数组
+      lunbotuList: [
+        "http://www.itcast.cn/images/slidead/BEIJING/2017440109442800.jpg",
+
+        "http://www.itcast.cn/images/slidead/BEIJING/2017511009514700.jpg",
+
+        "http://www.itcast.cn/images/slidead/BEIJING/2017421414422600.jpg"
+      ] // 保存轮播图的数组
     };
   },
   created() {
@@ -81,6 +84,12 @@ export default {
 <style lang="scss" scoped>
 .mint-swipe {
   height: 200px;
+  .mint-swipe-item {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   .mint-swipe-item:nth-child(1) {
     background-color: red;
   }
