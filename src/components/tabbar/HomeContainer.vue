@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
@@ -65,7 +66,7 @@ export default {
   },
   methods: {
     getLunbotuData() {
-      this.$http.get("`2q 1``   ``` ``1`1 3aq22222q`  1sw1a13a1`qapi/getlunbo").then(result => {
+      this.$http.get("api/getlunbo").then(result => {
         if (result.body.status === 0) {
           // 成功了
           this.lunbotuList = result.body.message;
