@@ -22,6 +22,8 @@ import router from './router.js'
 import VueResource from 'vue-resource'
 // 2.2 安装 vue-resource
 Vue.use(VueResource)
+// 设置请求的根路径
+Vue.http.options.root = 'http://vue.studyit.io'
 
 var vm = new Vue({
     el: "#app",

@@ -65,17 +65,15 @@ export default {
   },
   methods: {
     getLunbotuData() {
-      this.$http
-        .jsonp("http://vue.studyit.io/api/getlunbo", { credentials: true })
-        .then(result => {
-          if (result.body.status === 0) {
-            // 成功了
-            this.lunbotuList = result.body.message;
-          } else {
-            // 失败的
-            Toast("加载轮播图失败。。。");
-          }
-        });
+      this.$http.get("`2q 1``   ``` ``1`1 3aq22222q`  1sw1a13a1`qapi/getlunbo").then(result => {
+        if (result.body.status === 0) {
+          // 成功了
+          this.lunbotuList = result.body.message;
+        } else {
+          // 失败的
+          Toast("加载轮播图失败。。。");
+        }
+      });
     }
   }
 };
