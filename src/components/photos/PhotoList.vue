@@ -12,7 +12,7 @@
     </div>
     <!-- 图片列表区域-->
     <ul class="photo-list">
-      <router-link v-for="item in list" :key="item.id" to="#" tag="li">
+      <router-link v-for="item in list" :key="item.id" :to="'/home/photoInfo/' + item.id" tag="li">
         <img v-lazy="item.img_url" />
         <div class="info">
           <h1 class="info-title">{{ item.title }}</h1>
@@ -57,21 +57,25 @@ export default {
       ], // 所有分类的列表数组
       list: [
         {
+          id:'1',
           img_url: require("../../images/cbd.jpg"),
           title: "标题",
           zhaiyao: "摘要"
         },
         {
+          id:'2',
           img_url: require("../../images/cbd.jpg"),
           title: "标题",
           zhaiyao: "摘要"
         },
         {
+          id:'3',
           img_url: require("../../images/muwu.jpg"),
           title: "标题",
           zhaiyao: "摘要"
         },
         {
+          id:'4',
           img_url: require("../../images/shuijiao.jpg"),
           title: "标题",
           zhaiyao: "摘要"
