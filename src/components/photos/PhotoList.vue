@@ -10,8 +10,7 @@
         </div>
       </div>
     </div>
-
-    <!-- 图片列表区域
+    <!-- 图片列表区域-->
     <ul class="photo-list">
       <router-link v-for="item in list" :key="item.id" to="#" tag="li">
         <img v-lazy="item.img_url" />
@@ -20,7 +19,7 @@
           <div class="info-body">{{ item.zhaiyao }}</div>
         </div>
       </router-link>
-    </ul> -->
+    </ul> 
   </div>
 </template>
 
