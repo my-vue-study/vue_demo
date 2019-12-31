@@ -2,11 +2,17 @@
   <div>
     <!-- 顶部滑动条区域 -->
     <div id="slider" class="mui-slider">
-      <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+      <div
+        id="sliderSegmentedControl"
+        class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"
+      >
         <div class="mui-scroll">
-          <a :class="['mui-control-item', item.id == 0 ? 'mui-active' : '']" v-for="item in cates" :key="item.id" @tap="getPhotoListByCateId(item.id)">
-            {{ item.title }}
-          </a>
+          <a
+            :class="['mui-control-item', item.id == 0 ? 'mui-active' : '']"
+            v-for="item in cates"
+            :key="item.id"
+            @tap="getPhotoListByCateId(item.id)"
+          >{{ item.title }}</a>
         </div>
       </div>
     </div>
@@ -19,68 +25,20 @@
           <div class="info-body">{{ item.zhaiyao }}</div>
         </div>
       </router-link>
-    </ul> 
+    </ul>
   </div>
 </template>
 
 <script>
 // 1. 导入 mui 的js文件
 import mui from "../../lib/mui/js/mui.min.js";
+import { photo_list } from "../../photo_list_mock_data.js";
+import { photo_type } from "../../photo_type_mock_data.js";
 export default {
   data() {
     return {
-      cates: [
-        {
-          id: "1",
-          title: "全部"
-        },
-        {
-          id: "2",
-          title: "家居生活"
-        },
-        {
-          id: "3",
-          title: "摄影设计"
-        },
-        {
-          id: "4",
-          title: "明星美女"
-        },
-        {
-          id: "5",
-          title: "摄影器材"
-        },
-        {
-          id: "6",
-          title: "古典美女"
-        }
-      ], // 所有分类的列表数组
-      list: [
-        {
-          id:'1',
-          img_url: require("../../images/cbd.jpg"),
-          title: "标题",
-          zhaiyao: "摘要"
-        },
-        {
-          id:'2',
-          img_url: require("../../images/cbd.jpg"),
-          title: "标题",
-          zhaiyao: "摘要"
-        },
-        {
-          id:'3',
-          img_url: require("../../images/muwu.jpg"),
-          title: "标题",
-          zhaiyao: "摘要"
-        },
-        {
-          id:'4',
-          img_url: require("../../images/shuijiao.jpg"),
-          title: "标题",
-          zhaiyao: "摘要"
-        }
-      ] // 图片列表的数组
+      cates: photo_type, // 所有分类的列表数组
+      list: photo_list // 图片列表的数组
     };
   },
   created() {
